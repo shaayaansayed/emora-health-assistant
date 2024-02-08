@@ -74,9 +74,9 @@ Question: {question}
 const answerPrompt = PromptTemplate.fromTemplate(ANSWER_TEMPLATE);
 
 async function main() {
-  const messages = [
-    { role: "assistant", content: "Hello, how can I help you?" },
-    { role: "user", content: "What insurances do you support?" },
+  const messages: VercelChatMessage[] = [
+    { role: "assistant", content: "Hello, how can I help you?", id: "1" },
+    { role: "user", content: "What insurances do you support?", id: "2" },
   ];
   const previousMessages = messages.slice(0, -1);
   const currentMessageContent = messages[messages.length - 1].content;
